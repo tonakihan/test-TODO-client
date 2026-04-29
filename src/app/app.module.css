@@ -1,0 +1,23 @@
+.root_layout {
+    min-height: 100dvh;
+    min-width: 100dvw;
+
+    display: grid;
+    gap: 1em;
+    grid-template:
+        "header" min-content
+        "main" auto
+        "footer" min-content;
+    & > header {
+        grid-area: header;
+    }
+    & > main {
+        grid-area: main;
+    }
+    & > footer {
+        grid-area: footer;
+    }
+}
+
+/*@media (hover: hover) and (width > 1200px) {
+}*/
