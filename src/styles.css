@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+:root {
+    --bg-primary: var(--color-yellow-100);
+    --bg-sidebar: var(--color-yellow-400);
+}

@@ -1,16 +1,16 @@
-import TodoPage from "../features/todo/TodoPage";
-import Footer from "./layout/Footer";
-import Header from "./layout/Header";
+import Footer from "../components/layout/Footer";
+import Header from "../components/layout/Header";
 import styles from "./app.module.css";
+import { Outlet } from "react-router";
 
 function App() {
   return (
-    <div className={styles.root_layout}>
+    <div className={[styles.root_layout, styles.app].join(" ")}>
       <Header />
-      <main className="p-4">
-        <TodoPage />
+      <main className={`p-4 ${styles.main}`}>
+        <Outlet />
       </main>
-      <Footer />
+      <Footer className={styles.footer} />
     </div>
   );
 }
