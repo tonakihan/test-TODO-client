@@ -1,13 +1,42 @@
+@import "tailwindcss";
+
+/* Mobile */
+@media (width <= 768px) {
+    .root_layout {
+        grid-template:
+            "header" min-content
+            "main" auto
+            "footer" min-content;
+    }
+
+    .main {
+        @apply rounded-t-3xl;
+    }
+}
+
+/* Desktop */
+@media (width > 768px) {
+    .root_layout {
+        grid-template:
+            "header main" 1fr
+            "header footer" min-content
+            / min-content 1fr;
+    }
+
+    .main {
+        border-top-left-radius: 2em;
+    }
+    .footer {
+        border-bottom-left-radius: 2em;
+    }
+}
+
 .root_layout {
     min-height: 100dvh;
     min-width: 100dvw;
 
     display: grid;
-    gap: 1em;
-    grid-template:
-        "header" min-content
-        "main" auto
-        "footer" min-content;
+
     & > header {
         grid-area: header;
     }
@@ -17,6 +46,14 @@
     & > footer {
         grid-area: footer;
     }
+}
+
+.app {
+    background: var(--bg-sidebar);
+}
+
+.main {
+    background: var(--bg-primary);
 }
 
 /*@media (hover: hover) and (width > 1200px) {
