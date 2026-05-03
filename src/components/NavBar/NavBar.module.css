@@ -1,0 +1,17 @@
+.nav > * {
+    display: flex;
+    gap: 0.8em;
+    align-items: center;
+
+    border-radius: 0.45em;
+    margin-top: 0.4em;
+    padding: 0.4em 0.4em;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.3);
+    }
+
+    &[aria-current="page"] {
+        background: var(--bg-primary);
+    }
+}
