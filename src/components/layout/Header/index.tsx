@@ -4,9 +4,6 @@ import { MdMenu } from "react-icons/md";
 import { useState } from "react";
 import { FaRegUserCircle } from "react-icons/fa";
 
-/* TODO: Desktop css - sidebar - только иконки
- * + add text & change round when open */
-//TODO: Перенести round сюда и изменить
 function Header() {
   // For mobile
   const [sidebarState, setSidebarState] = useState<"active" | null>(null);
@@ -24,7 +21,6 @@ function Header() {
       <div className={styles.mobile}>Login</div>
 
       {/* Here is position: fixed */}
-      {/* TODO In destop mode - hover -> out second layer */}
       <>
         <div
           aria-label="Close sidebar"
@@ -33,7 +29,7 @@ function Header() {
           data-active={sidebarState}
         ></div>
         <div
-          className={[styles.sidebar, styles.layout, "bg-amber-300"].join(" ")}
+          className={[styles.sidebar, styles.layout].join(" ")}
           data-active={sidebarState}
         >
           <h1 className={styles.logo}>

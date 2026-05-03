@@ -2,5 +2,10 @@
 
 :root {
     --bg-primary: var(--color-yellow-100);
-    --bg-sidebar: var(--color-yellow-400);
+    /* Using for header/sidebar */
+    --bg-base: var(--color-yellow-400);
+    --bg-mobile-sidebar: var(--color-yellow-900);
+    --font-color-primary: rgb(60, 60, 60);
+
+    color: var(--font-color-primary);
 }

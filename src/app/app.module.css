@@ -49,7 +49,7 @@
 }
 
 .app {
-    background: var(--bg-sidebar);
+    background: var(--bg-base);
 }
 
 .main {
