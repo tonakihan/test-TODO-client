@@ -52,7 +52,8 @@
     background: var(--bg-base);
 }
 
-.main {
+.main,
+.footer {
     background: var(--bg-primary);
 }
 
