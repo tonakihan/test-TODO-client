@@ -1,0 +1,16 @@
+.a {
+    color: var(--color-red-600);
+    font-weight: 600;
+
+    &:hover {
+        color: var(--color-red-500);
+    }
+
+    &:visited {
+        color: var(--color-blue-500);
+
+        &:hover {
+            color: var(--color-blue-400);
+        }
+    }
+}
