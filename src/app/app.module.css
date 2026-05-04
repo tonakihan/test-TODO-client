@@ -57,5 +57,9 @@
     background: var(--bg-primary);
 }
 
+.main {
+    padding: 2em;
+}
+
 /*@media (hover: hover) and (width > 1200px) {
 }*/
