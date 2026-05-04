@@ -1,7 +1,7 @@
-import type { ComponentProps, PropsWithChildren } from "react";
+import type { ComponentProps } from "react";
 import styles from "./A.module.css";
 
-interface AProps extends PropsWithChildren<ComponentProps<"a">> {}
+interface AProps extends ComponentProps<"a"> {}
 
 function A({ children, className, ...props }: AProps) {
   return (
