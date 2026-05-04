@@ -1,8 +1,13 @@
+/* FIXME: ломает сайт на mobile*/
 .footer {
     padding: 0.5rem 2rem;
     display: flex;
     justify-content: center;
+    align-items: center;
+
     gap: 0.6em;
+
+    flex-wrap: wrap;
 }
 
 .footer svg {
