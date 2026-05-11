@@ -131,6 +131,7 @@
     }
     .sidebar:hover {
         width: var(--sidebar-open-width);
+        box-shadow: black -3px 0px 10px 0px;
     }
 
     /* NavBar items */
@@ -162,7 +163,7 @@
     }
 
     .sidebar {
-        transition-property: width;
+        transition-property: width, box-shadow;
     }
 
     .sidebar > :not(.nav) > *:nth-child(2),
