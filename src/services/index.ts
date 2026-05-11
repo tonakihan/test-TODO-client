@@ -5,6 +5,7 @@ const api = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "https://jsonplaceholder.typicode.com/",
   }),
+  tagTypes: ["Todos"],
   endpoints: () => ({}),
 });
 
