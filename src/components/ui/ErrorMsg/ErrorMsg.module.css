@@ -1,0 +1,26 @@
+.container {
+    --text-err: #fef2f2;
+    --bg-err: #fc2529;
+
+    display: flex;
+    align-items: center;
+
+    gap: 1em;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 0.8rem;
+
+    background-color: var(--bg-err);
+    color: var(--text-err);
+    font-weight: 500;
+}
+
+.icon {
+    width: 1.6em;
+    height: 1.6em;
+    flex-shrink: 0;
+}
+
+.message {
+    flex-grow: 1;
+}
