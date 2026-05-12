@@ -1,17 +1,21 @@
+import { ThemeProvider } from "@mui/material/styles";
 import Footer from "../components/layout/Footer";
 import Header from "../components/layout/Header";
 import styles from "./app.module.css";
 import { Outlet } from "react-router";
+import { appTheme } from "../styles/theme";
 
 function App() {
   return (
-    <div className={[styles.root_layout, styles.app].join(" ")}>
-      <Header />
-      <main className={`p-4 ${styles.main}`}>
-        <Outlet />
-      </main>
-      <Footer className={styles.footer} />
-    </div>
+    <ThemeProvider theme={appTheme}>
+      <div className={[styles.root_layout, styles.app].join(" ")}>
+        <Header />
+        <main className={`p-4 ${styles.main}`}>
+          <Outlet />
+        </main>
+        <Footer className={styles.footer} />
+      </div>
+    </ThemeProvider>
   );
 }
 

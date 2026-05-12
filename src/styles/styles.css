@@ -6,10 +6,11 @@
     --bg-base: var(--color-yellow-400);
     --bg-mobile-sidebar: var(--color-yellow-900);
     --font-color-primary: rgb(60, 60, 60);
+    --font-primary: Montserrat;
 
     color: var(--font-color-primary);
     font-size: 18px;
-    font-family: Montserrat;
+    font-family: var(--font-primary);
 }
 
 h1 {

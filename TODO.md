@@ -1,15 +1,18 @@
 # TODO
 
-- [ ] Style sheets
-  - [ ] mobile
-  - [ ] desktop
+- [x] Style sheets
+  - [x] mobile
+  - [x] desktop
 - [ ] API JSONPlaceHolder
-- [ ] Store
-  - [ ] MobX
-- [ ] React Router
-- [ ] Layouts
-  - [ ] Header
-    - [ ] SideBar/NavBar
-      - [ ] styles
-  - [ ] Footer
+- [x] Store
+  - [x] ~~MobX~~ Redux
+- [x] React Router
+- [x] Layouts
+  - [x] Header
+    - [x] SideBar/NavBar
+      - [x] styles
+  - [x] Footer
 - [ ] Testing
+
+## FIX
+- [ ] Mobile width (TodoPage Cards)
