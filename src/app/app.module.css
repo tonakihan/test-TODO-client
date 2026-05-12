@@ -33,7 +33,7 @@
 
 .root_layout {
     min-height: 100dvh;
-    min-width: 100dvw;
+    min-width: fit-content;
 
     display: grid;
 

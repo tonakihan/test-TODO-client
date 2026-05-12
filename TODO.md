@@ -15,4 +15,5 @@
 - [ ] Testing
 
 ## FIX
-- [ ] Mobile width (TodoPage Cards)
+- [x] Mobile width (TodoPage Cards)
+- [ ] Desktop (2 column)
