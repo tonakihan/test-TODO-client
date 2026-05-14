@@ -7,7 +7,7 @@ import { FaList, FaInfo } from "react-icons/fa";
 function NavBar({ className, ...props }: ComponentProps<"nav">) {
   return (
     <nav {...props} className={[styles.nav, className].join(" ")}>
-      <NavLink to="/">
+      <NavLink to="/todo">
         <FaList />
         <span>Todo</span>
       </NavLink>

@@ -1,8 +1,9 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, redirect } from "react-router";
 import App from "../app/App";
 import TodoPage from "../pages/TodoPage";
 import AboutPage from "../pages/AboutPage";
 import NotFoundPage from "../pages/NotFoundPage";
+import TodoItemPage from "../pages/TodoItemPage";
 
 const router = createBrowserRouter([
   {
@@ -11,7 +12,17 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
+        loader: () => redirect("/todos"),
+      },
+      {
+        path: "/todo",
         Component: TodoPage,
+        children: [
+          {
+            path: ":id",
+            Component: TodoItemPage,
+          },
+        ],
       },
       {
         path: "/about",
