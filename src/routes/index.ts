@@ -12,7 +12,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        loader: () => redirect("/todos"),
+        loader: () => redirect("/todo"),
       },
       {
         path: "/todo",
