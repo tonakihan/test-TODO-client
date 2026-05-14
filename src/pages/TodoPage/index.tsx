@@ -1,4 +1,4 @@
-import TodoCard from "../../components/ui/TodoCard";
+import TodoCard from "../../components/TodoCard";
 import styles from "./TodoPage.module.css";
 import { useGetTodosQuery } from "../../features/todos/services";
 import ErrorMsg from "../../components/ui/ErrorMsg";

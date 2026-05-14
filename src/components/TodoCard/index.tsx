@@ -6,9 +6,9 @@ import {
   FormGroup,
   IconButton,
 } from "@mui/material";
-import type { Todo } from "../../../features/todos/types/Todo";
+import type { Todo } from "../../features/todos/types/Todo";
 import clsx from "clsx";
-import { brandedTokens } from "../../../styles/theme";
+import { brandedTokens } from "../../styles/theme";
 import styles from "./styles/TodoCard.module.css";
 import theme from "./styles/theme";
 
