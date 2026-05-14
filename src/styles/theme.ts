@@ -12,6 +12,12 @@ const brandedTokens: ThemeOptions = {
     info: {
       main: "#2563eb",
     },
+    success: {
+      main: "#8cef5b",
+    },
+    warning: {
+      main: "#ffd262",
+    },
   },
   typography: {
     fontFamily: "var(--font-primary)",
@@ -22,4 +28,4 @@ const appTheme = createTheme({
   ...brandedTokens,
 });
 
-export { appTheme };
+export { appTheme, brandedTokens };
