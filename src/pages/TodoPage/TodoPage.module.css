@@ -1,0 +1,16 @@
+.title {
+    margin-bottom: 1.5rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 1rem;
+    align-items: start;
+}
+
+@media (width <= 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,66 @@
+.grid {
+    display: grid;
+    grid-template-areas:
+        "header side"
+        "body side"
+        "footer side";
+
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto 1fr auto;
+    gap: 0.6em;
+
+    width: 100%;
+    height: 100%;
+}
+
+.body {
+    grid-area: body;
+}
+.header {
+    grid-area: header;
+}
+.side {
+    grid-area: side;
+}
+.footer {
+    grid-area: footer;
+}
+
+.card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+    padding: 1.2em;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+.card_completed {
+    background-color: #f1ffee;
+}
+
+.body {
+    font-size: 1.1rem;
+}
+.body_completed {
+    color: hsl(0deg 0% 0% / 42%);
+    text-decoration: line-through;
+}
+
+.status {
+    user-select: none;
+    white-space: nowrap;
+}
+
+.footer {
+    border-top: 1px solid #f0f0f0;
+    padding-top: 0.4em;
+    font-size: 0.8em;
+    color: #757575;
+    letter-spacing: 0.5px;
+}
+
+.btnStack {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+}
