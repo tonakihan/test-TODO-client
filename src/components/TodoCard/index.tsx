@@ -48,7 +48,13 @@ function TodoCard({ todoId: id }: TodoCardProps) {
         <FormGroup className={styles.header}>
           <FormControlLabel
             color="success"
-            control={<Checkbox color="success" checked={todo.completed} />}
+            control={
+              <Checkbox
+                color="success"
+                checked={todo.completed}
+                onChange={handleToggle}
+              />
+            }
             label={todo.completed ? "Done" : "Pending"}
             aria-label="status"
             sx={{
