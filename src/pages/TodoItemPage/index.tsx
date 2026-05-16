@@ -1,5 +1,9 @@
+import { useParams } from "react-router";
+
 function TodoItemPage() {
-  return <></>;
+  const { id } = useParams();
+
+  return <p>ID: {id}</p>;
 }
 
 export default TodoItemPage;

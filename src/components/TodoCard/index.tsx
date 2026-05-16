@@ -6,27 +6,36 @@ import {
   FormGroup,
   IconButton,
 } from "@mui/material";
-import type { Todo } from "../../features/todos/types/Todo";
+import { useAppDispath, useAppSelector } from "../../hooks/store";
+import { toggleTodo, deleteTodo } from "../../features/todos/services/thunks";
+//import { deleteTodo } from "../../features/todos/store/todosSlice";
 import clsx from "clsx";
 import { brandedTokens } from "../../styles/theme";
 import styles from "./styles/TodoCard.module.css";
 import theme from "./styles/theme";
+import { selectTodoById } from "../../features/todos/store/selectors";
 
 interface TodoCardProps {
-  todo: Todo;
+  todoId: number;
 }
 
-function TodoCard({ todo }: TodoCardProps) {
+function TodoCard({ todoId: id }: TodoCardProps) {
+  const dispatch = useAppDispath();
+  const todo = useAppSelector((state) => selectTodoById(state, id));
+
   /** NOTICE: Work only in HTTPS (exclude localhost) */
   function handleCopy() {
     navigator.clipboard.writeText(todo.title);
   }
 
   //TODO
-  function handleToggle() {}
+  function handleToggle() {
+    dispatch(toggleTodo(id));
+  }
 
-  //TODO
-  function handleDelete() {}
+  function handleDelete() {
+    dispatch(deleteTodo(id));
+  }
 
   return (
     <ThemeProvider theme={theme}>

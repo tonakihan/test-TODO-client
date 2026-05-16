@@ -1,18 +1,30 @@
+import { useEffect } from "react";
+import { Outlet } from "react-router";
 import TodoCard from "../../components/TodoCard";
-import styles from "./TodoPage.module.css";
-import { useGetTodosQuery } from "../../features/todos/services";
+import { useAppDispath, useAppSelector } from "../../hooks/store";
+import { fetchTodos } from "../../features/todos/services/thunks";
 import ErrorMsg from "../../components/ui/ErrorMsg";
 import Spinner from "../../components/ui/Spinner";
-import { Outlet } from "react-router";
+import styles from "./TodoPage.module.css";
+import {
+  selectTodoIds,
+  selectTodosStatus,
+} from "../../features/todos/store/selectors";
 
 const TodoPage = () => {
-  const { data: todos = [], isLoading, isError } = useGetTodosQuery(11);
+  const dispatch = useAppDispath();
+  const todoIds = useAppSelector(selectTodoIds);
+  const todosStatus = useAppSelector(selectTodosStatus);
 
-  if (isError) {
+  useEffect(() => {
+    if (todosStatus === "idle") dispatch(fetchTodos(1));
+  }, [todosStatus, dispatch]);
+
+  if (todosStatus === "failed") {
     return <ErrorMsg />;
   }
 
-  if (isLoading) {
+  if (todosStatus === "loading") {
     return <Spinner color="info" />;
   }
 
@@ -21,15 +33,17 @@ const TodoPage = () => {
       <h1 className={styles.title}>Todo</h1>
 
       <div className={styles.grid}>
-        {todos.map((todo) => (
-          <TodoCard key={todo.id} todo={todo} />
+        {todoIds.map((id) => (
+          <TodoCard key={id} todoId={id} />
         ))}
       </div>
+
+      {/* TODO ButtonAdd */}
 
       {/* TodoItem - url :id */}
       <Outlet />
 
-      {todos.length === 0 && !isLoading && (
+      {todoIds.length === 0 && (
         <p style={{ textAlign: "center" }}>Список задач пуст</p>
       )}
     </>
