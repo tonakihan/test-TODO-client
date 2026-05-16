@@ -12,7 +12,6 @@ import { useAppDispath, useAppSelector } from "../../hooks/store";
 import { toggleTodo, deleteTodo } from "../../features/todos/services/thunks";
 import { selectTodoById } from "../../features/todos/store/selectors";
 //
-import { brandedTokens } from "../../styles/theme";
 import styles from "./styles/TodoCard.module.css";
 import theme from "./styles/theme";
 
@@ -60,8 +59,8 @@ function TodoCard({ todoId: id }: TodoCardProps) {
             sx={{
               "& .MuiFormControlLabel-label": {
                 backgroundColor: todo.completed
-                  ? brandedTokens.palette!.success!.main
-                  : brandedTokens.palette!.warning!.main,
+                  ? theme.palette.success.main
+                  : theme.palette.warning.main,
               },
             }}
           />
