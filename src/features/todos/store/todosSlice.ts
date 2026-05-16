@@ -37,10 +37,10 @@ const todosSlice = createSlice({
       .addCase(deleteTodo.fulfilled, todosAdapter.removeOne)
       //
       .addCase(toggleTodo.fulfilled, (state, action) => {
-        const todo = action.payload;
+        const updatedTodo = action.payload;
         todosAdapter.updateOne(state, {
-          id: todo.id,
-          changes: { completed: todo.completed },
+          id: updatedTodo.id,
+          changes: { completed: updatedTodo.completed },
         });
       });
   },

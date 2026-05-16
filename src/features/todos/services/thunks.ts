@@ -33,14 +33,17 @@ const toggleTodo = createAppAsyncThunk(
   "todos/toggleTodo",
   async (id: number, { getState }) => {
     try {
-      const todo = getState().todos.entities[id];
+      const stateTodo = getState().todos.entities[id];
+      const todo = structuredClone(stateTodo);
       todo.completed = !todo.completed;
       const res = await axios.patch<Todo>(`${BASE_QUERY}/${id}`, {
         // Можно секономить немного байт и оправить только необходимую часть
-        complated: todo.completed,
+        completed: todo.completed,
       });
       return res.data;
     } catch (e) {
+      console.error("thunk todos/toggleTodo: ");
+      console.error(e);
       throw e;
     }
   },
