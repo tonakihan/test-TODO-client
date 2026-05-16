@@ -6,14 +6,15 @@ import {
   FormGroup,
   IconButton,
 } from "@mui/material";
+import clsx from "clsx";
+//
 import { useAppDispath, useAppSelector } from "../../hooks/store";
 import { toggleTodo, deleteTodo } from "../../features/todos/services/thunks";
-//import { deleteTodo } from "../../features/todos/store/todosSlice";
-import clsx from "clsx";
+import { selectTodoById } from "../../features/todos/store/selectors";
+//
 import { brandedTokens } from "../../styles/theme";
 import styles from "./styles/TodoCard.module.css";
 import theme from "./styles/theme";
-import { selectTodoById } from "../../features/todos/store/selectors";
 
 interface TodoCardProps {
   todoId: number;

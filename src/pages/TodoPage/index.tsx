@@ -1,15 +1,18 @@
 import { useEffect } from "react";
 import { Outlet } from "react-router";
+//
 import TodoCard from "../../components/TodoCard";
-import { useAppDispath, useAppSelector } from "../../hooks/store";
-import { fetchTodos } from "../../features/todos/services/thunks";
 import ErrorMsg from "../../components/ui/ErrorMsg";
 import Spinner from "../../components/ui/Spinner";
-import styles from "./TodoPage.module.css";
+//
+import { useAppDispath, useAppSelector } from "../../hooks/store";
+import { fetchTodos } from "../../features/todos/services/thunks";
 import {
   selectTodoIds,
   selectTodosStatus,
 } from "../../features/todos/store/selectors";
+//
+import styles from "./TodoPage.module.css";
 
 const TodoPage = () => {
   const dispatch = useAppDispath();
@@ -32,6 +35,10 @@ const TodoPage = () => {
     <>
       <h1 className={styles.title}>Todo</h1>
 
+      {todoIds.length === 0 && (
+        <p style={{ textAlign: "center" }}>Список задач пуст</p>
+      )}
+
       <div className={styles.grid}>
         {todoIds.map((id) => (
           <TodoCard key={id} todoId={id} />
@@ -42,10 +49,6 @@ const TodoPage = () => {
 
       {/* TodoItem - url :id */}
       <Outlet />
-
-      {todoIds.length === 0 && (
-        <p style={{ textAlign: "center" }}>Список задач пуст</p>
-      )}
     </>
   );
 };
