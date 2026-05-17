@@ -33,7 +33,13 @@ function Header() {
           data-active={sidebarState}
         >
           <h1 className={styles.logo}>
-            <img src="/favicon-light.svg"></img>
+            <img
+              src={
+                import.meta.env.BASE_URL !== "/"
+                  ? `${import.meta.env.BASE_URL}/favicon-light.svg`
+                  : "/favicon-light.svg"
+              }
+            ></img>
             <span>(Logo)</span>
           </h1>
           <NavBar className={styles.nav} />
