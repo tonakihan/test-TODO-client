@@ -14,6 +14,7 @@ import { selectTodoById } from "../../features/todos/store/selectors";
 //
 import styles from "./styles/TodoCard.module.css";
 import theme from "./styles/theme";
+import { useGetUserByIdQuery } from "../../features/users/hooks/store";
 
 interface TodoCardProps {
   todoId: number;
@@ -22,6 +23,11 @@ interface TodoCardProps {
 function TodoCard({ todoId: id }: TodoCardProps) {
   const dispatch = useAppDispath();
   const todo = useAppSelector((state) => selectTodoById(state, id));
+  const {
+    data: user,
+    isError: isUserError,
+    isLoading: isUserLoading,
+  } = useGetUserByIdQuery(todo.userId);
 
   /** NOTICE: Work only in HTTPS (exclude localhost) */
   function handleCopy() {
@@ -90,7 +96,12 @@ function TodoCard({ todoId: id }: TodoCardProps) {
           </IconButton>
         </div>
 
-        <div className={styles.footer}>User ID: {todo.userId}</div>
+        <div className={styles.footer}>
+          by&nbsp;
+          {isUserError && "Anonimus"}
+          {isUserLoading && "..."}
+          {user?.username}
+        </div>
       </article>
     </ThemeProvider>
   );
