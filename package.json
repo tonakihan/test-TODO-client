@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "dev-host-preview": "tsc -b && vite build && python3 -m http.server -d dist"
+    "dev-host-preview": "tsc -b && GITHUB_REPOSITORY=d/dist vite build && (sleep 1 && xdg-open http://localhost:8000/dist &) && python3 -m http.server"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
