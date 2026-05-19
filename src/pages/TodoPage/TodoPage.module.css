@@ -8,6 +8,11 @@
     gap: 1rem;
     align-items: start;
 }
+@media (width > 768px) {
+    .card {
+        height: 200px;
+    }
+}
 
 @media (width <= 768px) {
     .grid {

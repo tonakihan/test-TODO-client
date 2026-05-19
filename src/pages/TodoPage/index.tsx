@@ -41,7 +41,7 @@ const TodoPage = () => {
 
       <div className={styles.grid}>
         {todoIds.map((id) => (
-          <TodoCard key={id} todoId={id} />
+          <TodoCard key={id} todoId={id} className={styles.card} />
         ))}
       </div>
 

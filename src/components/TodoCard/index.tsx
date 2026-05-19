@@ -18,9 +18,10 @@ import { useGetUserByIdQuery } from "../../features/users/hooks/store";
 
 interface TodoCardProps {
   todoId: number;
+  className: string;
 }
 
-function TodoCard({ todoId: id }: TodoCardProps) {
+function TodoCard({ todoId: id, className }: TodoCardProps) {
   const dispatch = useAppDispath();
   const todo = useAppSelector((state) => selectTodoById(state, id));
   const {
@@ -46,7 +47,7 @@ function TodoCard({ todoId: id }: TodoCardProps) {
   return (
     <ThemeProvider theme={theme}>
       <article
-        className={clsx(styles.card, styles.grid, {
+        className={clsx(styles.card, styles.grid, className, {
           [styles.card_completed]: todo.completed,
         })}
       >
