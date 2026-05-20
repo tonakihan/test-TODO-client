@@ -1,5 +1,5 @@
 import styles from "./Header.module.css";
-import NavBar from "../../NavBar";
+import NavBar from "../NavBar";
 import { MdMenu } from "react-icons/md";
 import { useState } from "react";
 import { FaRegUserCircle } from "react-icons/fa";
