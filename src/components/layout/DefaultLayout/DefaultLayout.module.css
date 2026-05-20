@@ -1,0 +1,22 @@
+.root {
+    height: 100%;
+    width: 100%;
+
+    display: grid;
+    grid-template:
+        "header" min-content
+        "body" auto
+        "footer" min-content;
+}
+
+.header {
+    grid-area: header;
+}
+
+.body {
+    grid-area: body;
+}
+
+.footer {
+    grid-area: footer;
+}
