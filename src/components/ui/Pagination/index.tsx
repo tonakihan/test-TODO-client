@@ -16,6 +16,9 @@ function Pagination({
       count={totalPages}
       page={currentPage}
       onChange={(_e, page) => setPage(page)}
+      sx={{
+        marginTop: "1rem",
+      }}
     ></MuiPagination>
   );
 }
