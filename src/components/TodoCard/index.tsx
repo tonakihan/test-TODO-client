@@ -19,9 +19,10 @@ import { useGetUserByIdQuery } from "../../features/users/hooks/store";
 interface TodoCardProps {
   todoId: number;
   className: string;
+  onClick: React.DOMAttributes<HTMLElement>["onClick"];
 }
 
-function TodoCard({ todoId: id, className }: TodoCardProps) {
+function TodoCard({ todoId: id, className, onClick }: TodoCardProps) {
   const dispatch = useAppDispath();
   const todo = useAppSelector((state) => selectTodoById(state, id));
   const {
@@ -31,16 +32,17 @@ function TodoCard({ todoId: id, className }: TodoCardProps) {
   } = useGetUserByIdQuery(todo.userId);
 
   /** NOTICE: Work only in HTTPS (exclude localhost) */
-  function handleCopy() {
+  function handleCopy(e: React.MouseEvent) {
+    e.stopPropagation();
     navigator.clipboard.writeText(todo.title);
   }
 
-  //TODO
   function handleToggle() {
     dispatch(toggleTodo(id));
   }
 
-  function handleDelete() {
+  function handleDelete(e: React.MouseEvent) {
+    e.stopPropagation();
     dispatch(deleteTodo(id));
   }
 
@@ -50,8 +52,12 @@ function TodoCard({ todoId: id, className }: TodoCardProps) {
         className={clsx(styles.card, styles.grid, className, {
           [styles.card_completed]: todo.completed,
         })}
+        onClick={onClick}
       >
-        <FormGroup className={styles.header}>
+        <FormGroup
+          onClick={(e) => e.stopPropagation()}
+          className={styles.header}
+        >
           <FormControlLabel
             color="success"
             control={
