@@ -10,3 +10,4 @@ export const {
 } = todosAdapter.getSelectors((state: RootState) => state.todos);
 
 export const selectTodosStatus = (state: RootState) => state.todos.status;
+export const selectTodosTotal = (state: RootState) => state.todos.total;

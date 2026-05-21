@@ -5,14 +5,24 @@ import type { Todo } from "../types/Todo";
 
 const BASE_QUERY = `${API_URL}/todos`;
 
+interface FetchTodos {
+  /** @property count Items per request */
+  count: number;
+  /** @property startIndex The starting index for requested items. Results will start from index + 1*/
+  startIndex?: number;
+}
+
 const fetchTodos = createAppAsyncThunk(
   "todos/fetchPosts",
-  //TODO add limit as optional
-  async (page: number) => {
+  async ({ count, startIndex = 0 }: FetchTodos) => {
     const res = await axios.get<Todo[]>(
-      `${BASE_QUERY}?_limit=11&_page=${page}`,
+      `${BASE_QUERY}?_limit=${count}&_start=${startIndex}`,
     );
-    return res.data;
+
+    return {
+      data: res.data,
+      total: +res.headers["x-total-count"],
+    };
   },
 );
 

@@ -9,6 +9,7 @@ import todosAdapter from "./adapter";
 import type { TodosState } from "../types/Store";
 
 const initialState: TodosState = todosAdapter.getInitialState({
+  total: 0,
   status: "idle",
   error: null,
 });
@@ -28,7 +29,9 @@ const todosSlice = createSlice({
       .addCase(fetchTodos.fulfilled, (state, action) => {
         state.status = "succeeded";
 
-        const todos = action.payload;
+        const todos = action.payload.data;
+        const totalTodosOnServer = action.payload.total;
+        state.total = totalTodosOnServer;
         todosAdapter.addMany(state, todos);
       })
       //
