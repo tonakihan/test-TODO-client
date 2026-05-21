@@ -1,0 +1,12 @@
+.card {
+    height: 100%;
+    width: 100%;
+    padding: 1.2em;
+
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
