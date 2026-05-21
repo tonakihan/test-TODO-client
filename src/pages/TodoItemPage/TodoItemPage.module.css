@@ -1,0 +1,27 @@
+.header {
+    border-bottom: #c0bebe 1px solid;
+    margin-bottom: 0.5rem;
+}
+
+.page {
+    color: #3e392e;
+}
+
+.info {
+    color: hsl(0deg 0% 0% / 40%);
+    font-weight: 500;
+}
+
+.textarea {
+    display: block;
+    width: 100%;
+    resize: none;
+    padding-inline: 1rem;
+    outline: none;
+    margin-bottom: 0.5rem;
+}
+
+.textarea:focus-visible {
+    border: 2px solid var(--bg-base);
+    border-radius: 0.4rem;
+}

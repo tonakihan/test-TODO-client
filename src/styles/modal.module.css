@@ -1,0 +1,29 @@
+.wrapper {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(0, 0, 0, 0.2);
+
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+
+    z-index: 4;
+}
+
+.window {
+    height: fit-content;
+    width: max(40%, 300px);
+}
+
+@media (width > 768px) {
+    .wrapper {
+        margin-left: var(--header-width);
+        width: calc(100% - var(--header-width));
+        border-top-left-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+    }
+}
