@@ -33,7 +33,7 @@ const TodoPage = () => {
   //
   const countItemsPerPage = 11;
   const pagination = usePagination(todoIds, countItemsPerPage);
-  const { currentPage, setPage, currentPageItems, totalPages } = pagination;
+  const { currentPage, currentPageItems, totalPages } = pagination;
 
   function handlerAddTodo() {
     //TODO Создать temp item и проверить, заполнен ли он.
@@ -45,7 +45,7 @@ const TodoPage = () => {
 
   // Loading more data
   if (totalPages - currentPage < 2) {
-    if (todoIds.at(-1) >= todosTotal)
+    if ((todoIds.at(-1) ?? Infinity) >= todosTotal)
       console.log("The data is ended on the server");
     else if (todosStatus === "succeeded") {
       dispatch(
