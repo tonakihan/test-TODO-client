@@ -11,6 +11,9 @@
     color: var(--font-color-primary);
     font-size: 18px;
     font-family: var(--font-primary);
+
+    /* Applyed only in the desktop mode */
+    --header-width: 50px;
 }
 
 @media (width <= 768px) {

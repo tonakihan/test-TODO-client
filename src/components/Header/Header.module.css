@@ -3,8 +3,6 @@
 /* FIXME Tab - accessibility */
 
 .header {
-    --header-width: 2.5em;
-
     /* line breaks are prohibited */
     white-space: nowrap;
     width: var(--header-width); /* TODO depends on .sidebar width */
