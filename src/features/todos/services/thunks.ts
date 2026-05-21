@@ -59,4 +59,12 @@ const toggleTodo = createAppAsyncThunk(
   },
 );
 
-export { fetchTodos, addTodo, deleteTodo, toggleTodo };
+const updateTodo = createAppAsyncThunk(
+  "todos/updateTodo",
+  async (todo: Partial<Todo> & Pick<Todo, "id">) => {
+    const res = await axios.patch<Todo>(`${BASE_QUERY}/${todo.id}`, todo);
+    return res.data;
+  },
+);
+
+export { fetchTodos, addTodo, deleteTodo, toggleTodo, updateTodo };

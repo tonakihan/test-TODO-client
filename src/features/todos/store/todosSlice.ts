@@ -4,6 +4,7 @@ import {
   deleteTodo,
   fetchTodos,
   toggleTodo,
+  updateTodo,
 } from "../services/thunks";
 import todosAdapter from "./adapter";
 import type { TodosState } from "../types/Store";
@@ -44,6 +45,14 @@ const todosSlice = createSlice({
         todosAdapter.updateOne(state, {
           id: updatedTodo.id,
           changes: { completed: updatedTodo.completed },
+        });
+      })
+      //
+      .addCase(updateTodo.fulfilled, (state, action) => {
+        const updatedTodo = action.payload;
+        todosAdapter.updateOne(state, {
+          id: updatedTodo.id,
+          changes: updatedTodo,
         });
       });
   },
