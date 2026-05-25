@@ -28,6 +28,6 @@ data examples
 
 # Lock files (only yarn)
 package-lock.json
-pnpm-lock.yaml
+!pnpm-lock.yaml
 bun.lockb
-!yarn.lock
+yarn.lock

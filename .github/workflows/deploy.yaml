@@ -2,7 +2,7 @@ name: Deploy
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   #workflow_dispatch:
@@ -19,14 +19,14 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: 24
-          cache: "yarn"
+          cache: "pnpm"
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Build project
-        run: yarn build
-        
+        run: pnpm build
+
       - name: Hack github fallback (for React-router)
         run: cp dist/index.html dist/404.html
 
@@ -34,8 +34,7 @@ jobs:
         uses: actions/upload-pages-artifact@v4
         with:
           path: dist/
-        
-  
+
   deploy:
     name: Deploy
     needs: build
@@ -46,7 +45,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    steps:        
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
