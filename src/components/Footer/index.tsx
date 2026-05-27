@@ -1,6 +1,6 @@
 import { type ComponentProps } from "react";
 import styles from "./Footer.module.css";
-import A from "../ui/A";
+import A from "@/components/ui/A";
 import { BsCode, BsCodeSlash } from "react-icons/bs";
 
 function Footer({ className, ...props }: ComponentProps<"footer">) {

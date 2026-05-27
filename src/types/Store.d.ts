@@ -1,4 +1,4 @@
-import store from "../store";
+import store from "@/store";
 
 // Infer the type of `store`
 export type AppStore = typeof store;

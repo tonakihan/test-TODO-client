@@ -1,5 +1,5 @@
 import { Pagination as MuiPagination } from "@mui/material";
-import type { UsePaginationReturn } from "../../../types/usePagination";
+import type { UsePaginationReturn } from "@/types/usePagination";
 import styles from "./Pagination.module.css";
 
 interface PaginationProps {

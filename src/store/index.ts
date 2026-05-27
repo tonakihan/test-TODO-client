@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
-import api from "../services";
-import todos from "../features/todos/store/todosSlice";
+import api from "@/services";
+import todos from "@/features/todos/store/todosSlice";
 
 const store = configureStore({
   reducer: {

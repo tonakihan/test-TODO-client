@@ -1,8 +1,8 @@
-import styles from "./DefaultLayout.module.css";
-import { attachSubComponents } from "../../../utils/attachSubComponents";
 import type { ComponentProps } from "react";
+import { attachSubComponents } from "@/utils/attachSubComponents";
+import { findByType } from "@/utils/findByType";
 import clsx from "clsx";
-import { findByType } from "../../../utils/findByType";
+import styles from "./DefaultLayout.module.css";
 
 interface DefaultLayoutProps extends ComponentProps<"div"> {}
 

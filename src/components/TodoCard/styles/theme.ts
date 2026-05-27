@@ -1,5 +1,5 @@
 import { createTheme } from "@mui/material";
-import { brandedTokens } from "../../../styles/theme";
+import { brandedTokens } from "@/styles/theme";
 import { grey } from "@mui/material/colors";
 
 const theme = createTheme({

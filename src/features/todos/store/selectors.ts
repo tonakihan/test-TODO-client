@@ -1,4 +1,4 @@
-import type { RootState } from "../../../types/Store";
+import type { RootState } from "@/types/Store";
 import todosAdapter from "./adapter";
 
 export const {

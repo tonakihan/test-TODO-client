@@ -1,5 +1,5 @@
-import { API_URL } from "../../../config/api";
-import { createAppAsyncThunk } from "../../../utils/store";
+import { API_URL } from "@/config/api";
+import { createAppAsyncThunk } from "@/utils/store";
 import axios from "axios";
 import type { Todo } from "../types/Todo";
 

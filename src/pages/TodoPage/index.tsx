@@ -1,22 +1,22 @@
 import { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router";
 //
-import DefaultLayout from "../../components/layout/DefaultLayout";
+import DefaultLayout from "@/components/layout/DefaultLayout";
 //
-import TodoCard from "../../components/TodoCard";
-import ErrorMsg from "../../components/ui/ErrorMsg";
-import Spinner from "../../components/ui/Spinner";
-import Pagination from "../../components/ui/Pagination";
-import Card from "../../components/ui/Card";
+import TodoCard from "@/components/TodoCard";
+import ErrorMsg from "@/components/ui/ErrorMsg";
+import Spinner from "@/components/ui/Spinner";
+import Pagination from "@/components/ui/Pagination";
+import Card from "@/components/ui/Card";
 //
-import { useAppDispath, useAppSelector } from "../../hooks/store";
-import usePagination from "../../hooks/usePagination";
-import { fetchTodos } from "../../features/todos/services/thunks";
+import { useAppDispath, useAppSelector } from "@/hooks/store";
+import usePagination from "@/hooks/usePagination";
+import { fetchTodos } from "@/features/todos/services/thunks";
 import {
   selectTodoIds,
   selectTodosStatus,
   selectTodosTotal,
-} from "../../features/todos/store/selectors";
+} from "@/features/todos/store/selectors";
 //
 import styles from "./TodoPage.module.css";
 import { FaPlus } from "react-icons/fa";

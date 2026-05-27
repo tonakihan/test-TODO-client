@@ -8,13 +8,13 @@ import {
 } from "@mui/material";
 import clsx from "clsx";
 //
-import { useAppDispath, useAppSelector } from "../../hooks/store";
-import { toggleTodo, deleteTodo } from "../../features/todos/services/thunks";
-import { selectTodoById } from "../../features/todos/store/selectors";
+import { useAppDispath, useAppSelector } from "@/hooks/store";
+import { toggleTodo, deleteTodo } from "@/features/todos/services/thunks";
+import { selectTodoById } from "@/features/todos/store/selectors";
 //
 import styles from "./styles/TodoCard.module.css";
 import theme from "./styles/theme";
-import { useGetUserByIdQuery } from "../../features/users/hooks/store";
+import { useGetUserByIdQuery } from "@/features/users/hooks/store";
 
 interface TodoCardProps {
   todoId: number;

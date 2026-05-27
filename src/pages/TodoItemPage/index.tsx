@@ -1,17 +1,17 @@
 import { useNavigate, useParams } from "react-router";
 //
-import DefaultLayout from "../../components/layout/DefaultLayout";
-import Card from "../../components/ui/Card";
+import DefaultLayout from "@/components/layout/DefaultLayout";
+import Card from "@/components/ui/Card";
 //
-import { useAppDispath, useAppSelector } from "../../hooks/store";
-import { selectTodoById } from "../../features/todos/store/selectors";
+import { useAppDispath, useAppSelector } from "@/hooks/store";
+import { selectTodoById } from "@/features/todos/store/selectors";
 //
 import styles from "./TodoItemPage.module.css";
-import stylesModal from "../../styles/modal.module.css";
+import stylesModal from "@/styles/modal.module.css";
 import clsx from "clsx";
 import { useState } from "react";
 import { Button, TextareaAutosize } from "@mui/material";
-import { updateTodo } from "../../features/todos/services/thunks";
+import { updateTodo } from "@/features/todos/services/thunks";
 
 function TodoItemPage() {
   const navigate = useNavigate();
