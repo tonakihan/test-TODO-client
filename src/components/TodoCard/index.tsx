@@ -18,8 +18,8 @@ import { useGetUserByIdQuery } from "@/features/users/hooks/store";
 
 interface TodoCardProps {
   todoId: number;
-  className: string;
-  onClick: React.DOMAttributes<HTMLElement>["onClick"];
+  className?: string;
+  onClick?: React.DOMAttributes<HTMLElement>["onClick"];
 }
 
 function TodoCard({ todoId: id, className, onClick }: TodoCardProps) {
