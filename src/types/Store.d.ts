@@ -1,4 +1,5 @@
 import store from "@/store";
+import type rootReducer from "@/store/rootReducer";
 
 // Infer the type of `store`
 export type AppStore = typeof store;
@@ -12,3 +13,4 @@ export type AppThunk<ThunkReturnType = void> = ThunkAction<
   unknown,
   Action
 >;
+export type PreloadedState = Parameters<typeof rootReducer>[0];
