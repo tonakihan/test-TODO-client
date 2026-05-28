@@ -24,6 +24,7 @@
 - [ ] Testing (vitest)
 - [ ] In case of error 
   - [ ] Add retry
+- [ ] Git hooks
 
 ## FIX
 - [x] Mobile width (TodoPage Cards)
